@@ -1,0 +1,58 @@
+﻿@model AnimalRegistration.Mammal
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Mammal</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.animal.animalID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.animal.animalID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MammalsName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MammalsName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MammalsType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MammalsType)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DietryType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DietryType)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PopulationNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PopulationNumber)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.MammalsID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,77 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+    @Styles.Render("~/Content/Style")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <div class="jumbotron text-center" style="margin-top:0" >
+        <h1>The Animal Kingdom</h1>
+        <p>All the information and facts YOU need about animals!</p>
+    </div>
+    
+    <div class="navbar navbar-inverse">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <nav />
+        </div>
+
+
+        <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav">
+                <li>@Html.ActionLink("Home", "Index", "Home") </li>
+                <li>@Html.ActionLink("Mammals Facts", "Mammals", "Home")</li>
+                <li>@Html.ActionLink("Birds Facts", "Birds", "Home")</li>
+                <li>@Html.ActionLink("Animals Facts", "AnimalFacts", "Home")</li>
+                <li>@Html.ActionLink("Amphibian Table", "Index", "Amphibians")</li>
+                <li>@Html.ActionLink("Bird Table", "Index", "Birds")</li>
+                <li>@Html.ActionLink("Fish Table", "Index", "Fish")</li>
+                <li>@Html.ActionLink("Mammal Table", "Index", "Mammals")</li>
+                <li>@Html.ActionLink("Reptile Table", "Index", "Reptiles")</li>
+                <li>@Html.ActionLink("Arthropods", "Index", "Arthropods")</li>
+                <li>@Html.ActionLink("Register", "Create", "Register")</li>
+                <li>@Html.ActionLink("LogIn", "Login", "SignIn")</li>
+                <li>@Html.ActionLink("Log Out", "LogOut", "SignIn")</li>
+            </ul>
+        </div>
+
+        <div class="login-controls">
+            @if (@Session["Email"] != null)
+            {
+                <div>
+                    <p class="fontcolor">Hello, @Session["FirstName"]</p>
+                </div>
+            }
+            else
+            {
+
+            }
+        </div>
+    </div>
+
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+        </footer>
+    </div>
+
+
+
+    @Scripts.Render("~/bundles/index")
+    @Scripts.Render("~/bundles/CSS")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
